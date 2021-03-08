@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!--========== BOX ICONS ==========-->
+    <link rel="icon" type="image/png" href="./assets/img/Logo_ico.ico" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+
+    <title>Dulce Ilusion</title>
+</head>
+
+<body>
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-up-arrow-alt scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="#" class="nav__logo"><img src="assets/img/Logo.png" alt=""></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+
+                    <li class="nav__item"><a href="#sabores" class="nav__link">Sabores</a></li>
+                    <li class="nav__item"><a href="#decoration" class="nav__link">Pide aquí</a></li>
+                    <li class="nav__item"><a href="#share" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="#contactoo" class="nav__link">Contacto</a></li>
+                    <li><i class='bx bx-toggle-left change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+            <button type="button" class="btn a1" id="boton-de-compra" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"><img src="assets/img/dona_c.png" alt="carrito de compras" id="shop"><span
+                    id="lblCartCount">0</span></button>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt'></i>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-shopping-cart"></i>Carrito de
+                        compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover" id="donutTable">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Sabores</th>
+                                <th>Precio</th>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal-3">Pagar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sección de Pago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead1">Los pedidos deben realizarse con 1 día de anticipación.</p>
+                    <form action="" id="pedidoForm" >
+                        <div class="row g-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">Nombre</label>
+                                <input type="text" name="" id="firstName" class="form-control" placeholder="Nombre"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Primer Nombre es requerido
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="apellido" class="form-label">Apellido</label>
+                                <input type="text" name="" id="apellido" class="form-control" placeholder="Apellido"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Apellido es requerido
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="telf" class="form-label">Télefono<span class="text-muted"> (Importante)</span></label>
+                                <input type="text" name="" id="telf" class="form-control" placeholder=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Número de télefono requerido
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email <span class="text-muted">(Opcional)</span></label>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            
+                              </div>
+                            <div class="col-md-5">
+                                <label for="tipo-casa" class="form-label">Tipo Casa</label>
+                                <select id="tipo-casa" class="form-select"
+                                    required>
+                                    <option value="">Escoge...</option>
+                                    <option value="Casa">Casa</option>
+                                    <option value="Departamento">Departamento</option>
+                                    <option value="Oficina">Oficina</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                   Tipo de casa es requerido
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="direc" class="form-label">Dirección</label>
+                                <input type="text" name="" id="direc" class="form-control" placeholder="Avenida Juan Perez 135"
+                                    required>
+                                <div class="invalid-feedback">
+                                   Dirección es requerida
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="direc2" class="form-label">Dirección 2</label>
+                                <input type="text" name="" id="direc2" class="form-control" placeholder="Numero de Departamento"
+                                >
+                               
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="ref" class="form-label">Referencia</label>
+                                <input type="text" name="" id="ref" class="form-control" placeholder="Cerca al parque.. Edificio color azul.."
+                                required>
+                                <div class="invalid-feedback">
+                                    Referencia es requerida para una mejor ubicación
+                                 </div>
+                            </div>
+                            <hr class="mb-4">
+                            <h4 class="mb-3">Horario de delivery</h4>
+                            <div class="d-block my-3">
+
+                                <div class="custom-control custom-radio">
+                                  <input id="credit" name="horario" type="radio" class="custom-control-input" checked required>
+                                  <label class="custom-control-label" for="credit">La tienda se comunicará con usted</label>
+                                </div>
+                                
+                              </div>
+                            <hr class="mb-4">
+                            <h4 class="mb-3">Método de pago</h4>
+                            <p>En caso seleccione Transferencia / Yape / Plin, envíar voucher al 980501015</p>
+                            <div class="d-block my-3">
+
+                                <div class="custom-control custom-radio">
+                                  <input id="trans" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                  <label class="custom-control-label" for="trans">Transferencia Bancaria</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                  <input id="yapli" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                  <label class="custom-control-label" for="yapli">Yape - plin</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                  <input id="contra" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                  <label class="custom-control-label" for="contra">Visa - Mastercard (Contra-entrega)</label>
+                                </div>
+                              </div>
+                              <hr class="mb-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="same-address">
+                                <label class="custom-control-label" for="same-address">Acepto pedir con 1 día de anticipación</label>
+                              </div>
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save-info">
+                                <label class="custom-control-label" for="save-info">Acepto envíar foto del voucher si se requiere</label>
+                              </div>
+                          
+                        </div>
+                        <hr class="mb-4">
+                        <p class="lead1">Al presionar el botón será redirigido a whatsapp para confirmar pedido.</p>
+                        <button class="btn btn-primary btn-lg btn-block" id="btnSend" type="submit">Realizar pedido</button>
+                    </form>
+
+                </div>
+
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
+
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <main class="l-main">
+        <div class="circle"></div>
+        <!--========== HOME ==========-->
+        <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__img">
+                    <div class="swiper-container swiper1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="assets/img/img1.png" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img2.png" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img3.PNG" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img4.PNG" alt="" class="doni"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <div class="home__data">
+                    <h1 class="home__title">Donuts
+                        <div class="word">
+                            <span>Únicas</span>
+                            <span>Ricas</span>
+                            <span>Suaves</span>
+                            <span>Dulces</span>
+                        </div>
+                    </h1><br>
+                    <p class="home__description">Te encuentras a un paso de caer en una dulce ilusión</p>
+                    <a href="#decoration" class="button">Empieza a disfrutar</a>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="icon facebook">
+
+                    <a href="https://www.facebook.com/Dulce-Ilusi%C3%B3n-102743978226409" target="_blank"><span><i
+                                class="fab fa-facebook-f"></i></span></a>
+                </div>
+                <div class="icon whatsapp">
+
+                    <a href="wa.me/+51980501015" target="_blank"><span><i class="fab fa-whatsapp"></i></span></a>
+                </div>
+                <div class="icon instagram">
+
+                    <a href="https://www.instagram.com/dulceilusionjk/" target="_blank"><span><i
+                                class="fab fa-instagram"></i></span></a>
+                </div>
+
+            </div>
+        </section>
+
+        <!--========== SHARE ==========-->
+        <section class="accessory section bd-container" id="sabores">
+            <h2 class="section-title">Nuestros Sabores</h2>
+
+            <div class="accessory__container bd-grid">
+                <div class="accessory__content">
+                    <img src="assets/img/accessory1.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Clásica</span>
+
+                </div>
+
+                <div class="accessory__content">
+                    <img src="assets/img/accessory2.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Rubia</span>
+                </div>
+
+                <div class="accessory__content">
+                    <img src="assets/img/accessory3.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Irresistible</span>
+
+                </div>
+
+                <div class="accessory__content">
+                    <img src="assets/img/accessory4.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Sublime</span>
+
+                </div>
+
+                <div class="accessory__content">
+                    <img src="assets/img/accessory5.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Pinky</span>
+
+                </div>
+                <div class="accessory__content">
+                    <img src="assets/img/accessory6.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Naranjita</span>
+
+                </div>
+                <div class="accessory__content">
+                    <img src="assets/img/accessory7.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Elegante</span>
+
+                </div>
+                <div class="accessory__content">
+                    <img src="assets/img/accessory8.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Fresca</span>
+
+                </div>
+                <div class="accessory__content" id="ener">
+                    <img src="assets/img/accessory9.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Energética</span>
+
+                </div>
+                <div class="accessory__content" id="chi">
+                    <img src="assets/img/accessory10.png" alt="" class="accessory__img">
+
+                    <span class="accessory__category">Engreída</span>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!--========== DECORATION ==========-->
+        <section class="decoration section bd-container" id="decoration">
+            <h2 class="section-title">Pide aquí</h2>
+            <div class="decoration__container bd-grid">
+                <div class="decoration__data">
+                    <div class="product">
+                        <div class="product-card">
+                            <h2 class="name">Media Docena</h2>
+                            <span class="price">S/20</span>
+
+                            <button type="button" class="btn popup-btn" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal-1" id="md" value="Media Docena">¡Escoge donas!</button>
+                            <img src="./assets/img/card1 (1).png" class="product-img" alt="">
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-card">
+                            <h2 class="name">Una Docena</h2>
+                            <span class="price">S/40</span>
+
+                            <button type="button" class="btn popup-btn" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal-2" id="">¡Escoge
+                                donas!</button>
+                            <img src="./assets/img/card2.png" class="product-img" alt="">
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+        <div class="modal fade" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog -centered">
+                <div class="modal-content a1">
+                    <div class="card2">
+
+                        <div class="info1">
+                            <div class="shoeName">
+                                <div>
+                                    <h1 class="big">Media Docena</h1>
+                                    <span class="new">Nuevo</span>
+                                </div>
+                                <h3 class="small"></h3>
+                            </div>
+                            <div class="description">
+                                <h3 class="title">Seleccione sabores</h3>
+                                <div class="id_principal">
+                                    <div class="boxi" id="hdoz">
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="clasica" class="tit">Clásica</label>
+                                                <span class="sabor">Chocolate con grajeas</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" name="" class="inputNumber" min=0 max=6
+                                                        value="0" id="clasica">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="rubia" class="tit">Rubia</label>
+                                                <span class="sabor">Azucar con canela</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="rubia" name="" class="inputNumber" min=0
+                                                        max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="elegante" class="tit">Elegante</label>
+                                                <span class="sabor">Chocolate blanco con castañas</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="elegante" name="" class="inputNumber" min=0
+                                                        max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="energetica" class="tit">Energética</label>
+                                                <span class="sabor">Algarrobina con café</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="energetica" name="" class="inputNumber"
+                                                        min=0 max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="fresca" class="tit">Fresca</label>
+                                                <span class="sabor">Menta con cholocate</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="fresca" name="" class="inputNumber" min=0
+                                                        max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="irresistible" class="tit">Irresistible</label>
+                                                <span class="sabor">Crema de avellanas</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="irresistible" name="" class="inputNumber"
+                                                        min=0 max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="naranjita" class="tit">Naranjita</label>
+                                                <span class="sabor">Naranja con cholocate</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="naranjita" name="" class="inputNumber"
+                                                        min=0 max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="pinky" class="tit">Pinky</label>
+                                                <span class="sabor">Fresa con cholocate</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="pinky" name="" class="inputNumber" min=0
+                                                        max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="sublime" class="tit">Sublime</label>
+                                                <span class="sabor">Chocolate con maní</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="sublime" name="" class="inputNumber" min=0
+                                                        max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="half-dozen">
+                                                <label for="engreida" class="tit">Engreída</label>
+                                                <span class="sabor">Chirimoya con Oreo</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="engreida" name="" class="inputNumber" min=0
+                                                        max=6 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buy-price">
+                                <button type="button" class="b" id="but" disabled="disabled" value="S/20"
+                                    data-bs-dismiss="modal">
+                                    <i class="fas fa-shopping-cart"></i>Agregar al carrito
+                                </button>
+                                <div class="price">
+                                    <h1>S/ 20</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog -centered">
+                <div class="modal-content a1">
+                    <div class="card2">
+                        <div class="info1">
+                            <div class="shoeName">
+                                <div>
+                                    <h1 class="big">Una Docena</h1>
+                                    <span class="new">Nuevo</span>
+                                </div>
+                                <h3 class="small"></h3>
+                            </div>
+                            <div class="description">
+                                <h3 class="title">Seleccione sabores</h3>
+                                <div class="id_principal">
+                                    <div class="boxi" id="doz">
+
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="clasica" class="tit">Clásica</label>
+                                                <span class="sabor">Chocolate con grajeas</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" name="" class="inputNumber" min=0 max=12
+                                                        value="0" id="clasica">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="rubia" class="tit">Rubia</label>
+                                                <span class="sabor">Azucar con canela</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="rubia" name="" class="inputNumber" min=0
+                                                        max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="elegante" class="tit">Elegante</label>
+                                                <span class="sabor">Chocolate blanco con castañas</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="elegante" name="" class="inputNumber" min=0
+                                                        max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="energetica" class="tit">Energética</label>
+                                                <span class="sabor">Algarrobina con café</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="energetica" name="" class="inputNumber"
+                                                        min=0 max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="fresca" class="tit">Fresca</label>
+                                                <span class="sabor">Menta con cholocate</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="fresca" name="" class="inputNumber" min=0
+                                                        max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="irresistible" class="tit">Irresistible</label>
+                                                <span class="sabor">Crema de avellanas</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="irresistible" name="" class="inputNumber"
+                                                        min=0 max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="naranjita" class="tit">Naranjita</label>
+                                                <span class="sabor">Naranja con cholocate</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="naranjita" name="" class="inputNumber"
+                                                        min=0 max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="pinky" class="tit">Pinky</label>
+                                                <span class="sabor">Fresa con cholocate</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="pinky" name="" class="inputNumber" min=0
+                                                        max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="sublime" class="tit">Sublime</label>
+                                                <span class="sabor">Chocolate con maní</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="sublime" name="" class="inputNumber" min=0
+                                                        max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="don">
+                                            <div class="dozen">
+                                                <label for="engreida" class="tit">Engreída</label>
+                                                <span class="sabor">Chirimoya con Oreo</span>
+                                                <div class="flavor">
+                                                    <button class="decrement">-</button>
+                                                    <input type="number" id="engreida" name="" class="inputNumber" min=0
+                                                        max=12 value="0">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buy-price">
+                                <button class="b" id="but2" disabled="disabled" data-bs-dismiss="modal">
+                                    <i class="fas fa-shopping-cart"></i>Agregar al carrito</a>
+                                </button>
+                                <div class="price">
+                                    <h1>S/ 40</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--========== ACCESSORIES ==========-->
+
+
+        <section class="share section bd-container" id="share">
+            <section class="share section bd-container" id="share">
+                <div class="share__container bd-grid">
+                    <div class="share__data">
+                        <h2 class="section-title-center">Nosotros</h2>
+                        <p class="share__description">
+                            Dulce Ilusión empresa creada por Aldo Hurtado y Jenny Kcomt, esposos emprendedores que
+                            juntos trabajan para crear este producto de calidad y llevarlo a sus hogares dando ilusión y
+                            alegría.
+                            <br><br>
+                            Nuestra misión es entregar un producto de calidad con dedicación llevando ilusión a los
+                            hogares.</p>
+
+                    </div>
+
+                    <div class="share__img">
+                        <div class="swiper-container swiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="assets/img/shared1.png" alt="" id="fondo"></div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="contactope" id="contactoo">
+                <div class="container_contact">
+                    <div class="form">
+                        <div class="contact-info">
+                            <h3 class="title">Contáctanos</h3>
+                            <p class="text_c">
+                                Nos encanta engreírte, por eso estaremos atentos a tus mensajes, para llevarte
+                                una dulce ilusión lo más rápido posible
+                            </p>
+
+                            <div class="info">
+                                <div class="information">
+                                    <img src="./assets/img/location.png" class="icon" alt="" />
+                                    <p>Av. Aviacion 3944 1401, Surquillo</p>
+                                </div>
+                                <div class="information">
+                                    <img src="./assets/img/email.png" class="icon" alt="" />
+                                    <p>info@dulceilusionjk.com</p>
+                                </div>
+                                <div class="information">
+                                    <img src="./assets/img/phone.png" class="icon" alt="" />
+                                    <p>980501015</p>
+                                </div>
+                            </div>
+
+                            <div class="social-media">
+                                <p>¡Síguenos en redes sociales!</p>
+                                <div class="social-icons">
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form">
+                            <span class="circle one"></span>
+                            <span class="circle two"></span>
+
+                            <form action="enviar2.php" autocomplete="off" method="POST">
+                                <h3 class="title">Ó Deje un mensaje</h3>
+                                <div class="input-container">
+                                    <input type="text" name="name" class="input" />
+                                    <label for="">Nombre</label>
+                                    <span>Nombre</span>
+                                </div>
+                                <div class="input-container">
+                                    <input type="email" name="email" class="input" />
+                                    <label for="">Email</label>
+                                    <span>Email</span>
+                                </div>
+                                <div class="input-container">
+                                    <input type="tel" name="phone" class="input" />
+                                    <label for="">Télefono</label>
+                                    <span>Télefono</span>
+                                </div>
+                                <div class="input-container textarea">
+                                    <textarea name="message" class="input"></textarea>
+                                    <label for="">Mensaje</label>
+                                    <span>Mensaje</span>
+                                </div>
+                                <button type="submit" onclick="sweetalertclick()"
+                                    class="w3-button btn_send">Envíar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+    </main>
+
+    <!-- ========== FOOTER ==========-->
+    <footer class="footer sectionn">
+        <div class="footer__containerr bd-container bd-grid">
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    <a href="#" class="footer__logo">Somos Dulce Ilusión</a>
+                </h3>
+                <p class="footer__description">Gracias por visitarnos</p>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Servicios</h3>
+                <ul>
+                    <li><a href="#abou" class="footer__link">Precios </a></li>
+                    <li><a href="#" class="footer__link">Descuentos</a></li>
+                    <li><a href="#" class="footer__link">Nuestra misión</a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="footer__content">
+                <h3 class="footer__title">Social</h3>
+                <a href="#" class="footer__social"><i class='bx bxl-facebook-circle '></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-instagram-alt'></i></a>
+            </div>
+        </div>
+        <footer>
+            <p class="footer__copy">&#169; 2021 Dulce Ilusion</p>
+        </footer>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <!--========== MAIN JS ==========-->
+        <!-- <script src="assets/js/a.js"></script>
+        <script src="assets/js/app.js"></script> -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/Variables.js"></script>
+        <script src="assets/js/Logica.js"></script>
+
+</body>
+
+</html>
