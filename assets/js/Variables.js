@@ -42,8 +42,8 @@ const sendPedido = (e) => {
     if(window['same-address'].checked && window['save-info'].checked){
       window.open(`https://wa.me/${numeroNegocio}?text=%2ANUEVA+ORDEN%2A%0D%0A%2ANombre%3A%2A+${nombre}%0D%0A%2ATelefono%3A%2A+${telefono}%0D%0A%2AEmail%3A%2A+${semail}%0D%0A%2ADirecci%C3%B3n%3A%2A+%28${tipoCasa}%29+${direccion1}%2C+${direccion2}%0D%0A%2AReferencia%3A%2A+${referencia}%0D%0A%2AHorario%3A%2A+${horario}%0D%0A%2AMetodo+de+Pago%3A%2A+${metodoPago}%0D%0A%2APEDIDO%3A%2A%0D%0A${pedido}%0D%0A&lang=en`)
       deleteCart()
-      let queryModal = document.querySelector('#exampleModal-3')
-      let myModal = bootstrap.Modal.getInstance(queryModal)
+      let orderModal = document.querySelector('#exampleModal-3')
+      let myModal = bootstrap.Modal.getInstance(orderModal)
       myModal.hide()
       let cartShoppingModal = document.querySelector('#exampleModal')
       let myModal1 = bootstrap.Modal.getInstance(cartShoppingModal)
