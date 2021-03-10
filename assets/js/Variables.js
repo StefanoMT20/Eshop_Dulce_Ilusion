@@ -19,9 +19,11 @@ const sendPedido = (e) => {
   let nombre = `${firstName.value} ${apellido.value}`
   let telefono = telf.value
   let semail = email.value
+  let dis= window['dist'].value
   let tipoCasa = window['tipo-casa'].value
   let direccion1 = direc.value
-  let direccion2 = direc2.value
+  let numc = numc.value
+  let depa = depa.value
   let referencia = ref.value
   let horario = 'Coordinar con la tienda'
   let $selectedPayMethod = [...document.getElementsByName('paymentMethod')].filter(method => method.checked === true)[0]

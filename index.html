@@ -129,6 +129,20 @@
                             
                               </div>
                             <div class="col-md-5">
+                                <label for="distrito" class="form-label">Distrito</label>
+                                <select id="distrito" class="form-select"
+                                    required>
+                                    <option value="">Distrito...</option>
+                                    <option value="san borja">San Borja</option>
+                                    <option value="miraflores">Miraflores</option>
+                                    <option value="sanisidro">San Isidro</option>
+                                    <option value="surco">Surco</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                   Distrito es requerido
+                                </div>
+                            </div>
+                            <div class="col-md-5">
                                 <label for="tipo-casa" class="form-label">Tipo Casa</label>
                                 <select id="tipo-casa" class="form-select"
                                     required>
@@ -143,18 +157,25 @@
                             </div>
                             <div class="col-sm-6">
                                 <label for="direc" class="form-label">Dirección</label>
-                                <input type="text" name="" id="direc" class="form-control" placeholder="Avenida Juan Perez 135"
+                                <input type="text" name="" id="direc" class="form-control" placeholder="Avenida Juan Perez"
                                     required>
                                 <div class="invalid-feedback">
                                    Dirección es requerida
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <label for="direc2" class="form-label">Dirección 2</label>
-                                <input type="text" name="" id="direc2" class="form-control" placeholder="Numero de Departamento"
-                                >
-                               
+                            <div class="col-sm-4">
+                                <label for="numc" class="form-label">Número de casa</label>
+                                <input type="text" name="" id="numc" class="form-control" placeholder="156"
+                                    required>
+                                
                             </div>
+                            <div class="col-sm-4">
+                                <label for="depa" class="form-label">Número Departamento</label>
+                                <input type="text" name="" id="depa" class="form-control" placeholder="201"
+                                >
+                         
+                            </div>
+                    
                             <div class="col-sm-6">
                                 <label for="ref" class="form-label">Referencia</label>
                                 <input type="text" name="" id="ref" class="form-control" placeholder="Cerca al parque.. Edificio color azul.."
