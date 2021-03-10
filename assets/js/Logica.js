@@ -20,6 +20,13 @@ function saveOrder() {
   drawDonutsTable();
 }
 
+const eliminarPedido = (index, lista) => {
+  lista.splice(index, 1)
+  localStorage.setItem('localPedido', JSON.stringify(lista))
+  localStorage.setItem('cartNumbers', lista.length)
+  document.querySelector('#lblCartCount').textContent = lista.length
+  drawDonutsTable()
+}
 
 function getdonutlist() {
   var storedList = localStorage.getItem('localPedido');
@@ -34,17 +41,20 @@ function getdonutlist() {
 }
   
 function drawDonutsTable() {
+  let donutList = JSON.parse(localStorage.getItem('localPedido'))
+  console.log(donutList);
   var list = getdonutlist(),
     tbody = document.querySelector("#donutTable tbody");
 
   tbody.innerHTML = "";
   price = 0;
-  for (var i = 0; i < list.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     price += parseInt(list[i].precio);
     var row = tbody.insertRow(i);
     var cltipo = row.insertCell(0),
       clclas = row.insertCell(1),
-      clrub = row.insertCell(2);
+      clrub = row.insertCell(2),
+      clDelete = row.insertCell(3);
 
     cltipo.innerHTML = list[i].tipo;
     let flavorsList = "";
@@ -54,13 +64,18 @@ function drawDonutsTable() {
     });
     clclas.innerHTML = flavorsList;
     clrub.innerHTML = `<p class="table-price">${list[i].precio}</p>`;
+    let $deleteButton = document.createElement('button')
+    $deleteButton.innerHTML = 'X'
+    $deleteButton.classList.add('delete-button')
+    $deleteButton.addEventListener('click', () => { eliminarPedido(i, donutList) })
+    clDelete.appendChild($deleteButton)
     tbody.appendChild(row);
   }
   let totalRow = tbody.insertRow(list.length)
   let clLabel = totalRow.insertCell(0)
   let clEmpty= totalRow.insertCell(1)
   let clTotal = totalRow.insertCell(2)
+  let clEmpty2 = totalRow.insertCell(3)
   clLabel.innerHTML = '<p class="table-total-label">TOTAL</p>'
   clTotal.innerHTML = `<p class="table-total table-price">${price}</p>`
-  console.log(price)
 }
