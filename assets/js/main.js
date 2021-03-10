@@ -94,8 +94,8 @@ themeButton.addEventListener('click', () => {
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
   distance: '30px',
-  duration: 1800,
-  reset: true,
+  duration: 1500,
+  reset: false,
 });
 
 sr.reveal(`.home__data, .home__img, 
@@ -117,20 +117,28 @@ var swiper = new Swiper('.swiper1', {
 
   effect: 'cube',
   grabCursor: true,
+  loop:true,
   cubeEffect: {
     shadow: true,
     slideShadows: false,
     shadowOffset: 20,
     shadowScale: 0.94,
+    
   },
   autoplay: {
-    delay: 2500,
+    delay: 3000,
+   
   },
+
 
   pagination: {
     el: '.swiper-pagination',
+    clickable: true
   },
+  
 });
+
+
 var swiper = new Swiper('.swiper2', {
   spaceBetween: 30,
   centeredSlides: true,
