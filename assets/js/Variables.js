@@ -14,7 +14,7 @@ const sendPedido = (e) => {
   let nombre = `${firstName.value} ${apellido.value}`
   let telefono = telf.value
   let semail = email.value
-  let dist = window['dist'].value
+  let dis= window['dist'].value
   let tipoCasa = window['tipo-casa'].value
   let direccion1 = direc.value
   let numc = numc.value
@@ -37,7 +37,7 @@ const sendPedido = (e) => {
   } else {
     // Checkboxes del form
     if(window['same-address'].checked && window['save-info'].checked){
-      window.open(`https://wa.me/${numeroNegocio}?text=%2ANUEVA+ORDEN%2A%0D%0A%2ANombre%3A%2A+${nombre}%0D%0A%2ATelefono%3A%2A+${telefono}%0D%0A%2AEmail%3A%2A+${semail}%0D%0A%2ADirecci%C3%B3n%3A%2A+%28${tipoCasa}%29+${direccion1}%2C+${direccion2}%0D%0A%2AReferencia%3A%2A+${referencia}%0D%0A%2AHorario%3A%2A+${horario}%0D%0A%2AMetodo+de+Pago%3A%2A+${metodoPago}%0D%0A%2APEDIDO%3A%2A%0D%0A${pedido}%0D%0A&lang=en`)
+      window.open(`https://wa.me/${numeroNegocio}?text=%2ANUEVA+ORDEN%2A%0D%0A%2ANombre%3A%2A+${nombre}%0D%0A%2ATelefono%3A%2A+${telefono}%0D%0A%2AEmail%3A%2A+${semail}%0D%0A%2ADirecci%C3%B3n%3A%2A+%28${tipoCasa}%29+${direccion1}%2C+${numc}%2C+${depa}%2C+${dis}%0D%0A%2AReferencia%3A%2A+${referencia}%0D%0A%2AHorario%3A%2A+${horario}%0D%0A%2AMetodo+de+Pago%3A%2A+${metodoPago}%0D%0A%2APEDIDO%3A%2A%0D%0A${pedido}%0D%0A&lang=en`)
     } else {
       alert('Tienes que aceptar pedir con 1 día de anticipación y enviar el voucher si es requerido')
     }
