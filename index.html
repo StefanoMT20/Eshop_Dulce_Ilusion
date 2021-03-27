@@ -20,8 +20,13 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
 
+    <meta name="description" content="Donuts Dulce Ilusión, las donas más ricas de todo Lima">
 
     <title>Dulce Ilusion</title>
+    <meta property="og:title" content="Donuts Dulce Ilusion" />
+    <meta property="og:url" content="https://dulceilusionjk.com" />
+    <meta property="og:description" content="Llevar una Dulce Ilusión  a los hogares, ofreciendo un producto de calidad a un precio justo con un trato cálido y profesional.">
+    <meta property="og:image" content="https://dulceilusionjk.com/assets/img/logo.png">
 </head>
 
 <body>
@@ -33,7 +38,7 @@
     <!--========== HEADER ==========-->
     <header class="l-header" id="header">
         <nav class="nav bd-container">
-            <a href="#" class="nav__logo"><img src="assets/img/Logo.png" alt=""></a>
+            <a href="#" class="nav__logo"><img src="assets/img/logo.png" alt=""></a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
@@ -62,7 +67,7 @@
         <div class="modal-dialog modal-fullscreen-md-down">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-shopping-cart"></i>Carrito de
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-shopping-cart" id="carrito_modal"></i>Carrito de
                         compras</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -133,10 +138,30 @@
                                 <select id="distrito" class="form-select"
                                     required>
                                     <option value="">Distrito...</option>
+                                    <option value="Surquillo">Surquillo</option>
+                                    <option value="barranco">Barranco</option>
+                                    <option value="molina">La Molina</option>
                                     <option value="san borja">San Borja</option>
+                                    <option value="jesus_maria">Jesus María</option>
+                                    <option value="chorillos">Chorrillos</option>
+                                    <option value="pueblo_libre">Pueblo Libre</option>
+                                    <option value="breña">Breña</option>
                                     <option value="miraflores">Miraflores</option>
-                                    <option value="sanisidro">San Isidro</option>
+                                    <option value="cercado">Cercado de Lima</option>
+                                    <option value="Lince">Lince</option>
                                     <option value="surco">Surco</option>
+                                    <option value="salamanca">Salamanca</option>
+                                    <option value="sanisidro">San Isidro</option>
+                                    <option value="la_victoria">La Victoria</option>
+                                    <option value="mag_del_mar">Magdalena del Mar</option>
+                                    <option value="san_luis">San Luis</option>
+                                    <option value="san_miguel">San Miguel</option>
+                                    <option value="santa_anita">Santa Anita</option>
+                                    <option value="villa_el_salvador">Villa el salvador</option>
+                                    <option value="casuarinas">Casuarinas</option>
+                                    <option value="la_planicie">La Planicie</option>
+                                    <option value="magdalena">Magdalena</option>
+                            
                                 </select>
                                 <div class="invalid-feedback">
                                    Distrito es requerido
@@ -186,10 +211,12 @@
                             </div>
                             <hr class="mb-4">
                             <h4 class="mb-3">Horario de delivery</h4>
+                            <span class="precio_delivery">Precio de delivery no incluido, la tienda se comunicará con usted</span>
                             <div class="d-block my-3">
-
+                               
                                 <div class="custom-control custom-radio">
                                   <input id="credit" name="horario" type="radio" class="custom-control-input" checked required>
+                                  
                                   <label class="custom-control-label" for="credit">La tienda se comunicará con usted</label>
                                 </div>
                                 
@@ -225,15 +252,9 @@
                         </div>
                         <hr class="mb-4">
                         <p class="lead1">Al presionar el botón será redirigido a whatsapp para confirmar pedido.</p>
-                        <button class="btn btn-primary btn-lg btn-block" id="btnSend" type="submit">Realizar pedido</button>
+                        <button class="btn btn-primary btn-lg btn-block" id="btnSend" type="submit">Continuar</button>
                     </form>
-
                 </div>
-
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Pagar</button>
-
-                </div> -->
             </div>
         </div>
 
@@ -250,6 +271,13 @@
                             <div class="swiper-slide"><img src="assets/img/img2.png" alt="" class="doni"></div>
                             <div class="swiper-slide"><img src="assets/img/img3.PNG" alt="" class="doni"></div>
                             <div class="swiper-slide"><img src="assets/img/img4.PNG" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img5.PNG" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img6.PNG" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img7.PNG" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img8.PNG" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img9.PNG" alt="" class="doni"></div>
+                            <div class="swiper-slide"><img src="assets/img/img10.PNG" alt="" class="doni"></div>
+
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -370,7 +398,7 @@
                             <span class="price">S/20</span>
 
                             <button type="button" class="btn popup-btn" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal-1" id="md" value="Media Docena">¡Escoge donas!</button>
+                                data-bs-target="#exampleModal-1" id="md" value="Media Docena">¡Escoge donuts!</button>
                             <img src="./assets/img/card1 (1).png" class="product-img" alt="">
                         </div>
                     </div>
@@ -382,7 +410,7 @@
 
                             <button type="button" class="btn popup-btn" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal-2" id="">¡Escoge
-                                donas!</button>
+                                donuts!</button>
                             <img src="./assets/img/card2.png" class="product-img" alt="">
                         </div>
                     </div>
@@ -414,7 +442,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" name="" class="inputNumber" min=0 max=6
-                                                        value="0" id="clasica">
+                                                        value="0" id="clasica" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -422,11 +450,11 @@
                                         <div class="don">
                                             <div class="half-dozen">
                                                 <label for="rubia" class="tit">Rubia</label>
-                                                <span class="sabor">Azucar con canela</span>
+                                                <span class="sabor">Azúcar con canela</span>
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="rubia" name="" class="inputNumber" min=0
-                                                        max=6 value="0">
+                                                        max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -438,7 +466,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="elegante" name="" class="inputNumber" min=0
-                                                        max=6 value="0">
+                                                        max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -450,7 +478,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="energetica" name="" class="inputNumber"
-                                                        min=0 max=6 value="0">
+                                                        min=0 max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -462,7 +490,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="fresca" name="" class="inputNumber" min=0
-                                                        max=6 value="0">
+                                                        max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -475,7 +503,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="irresistible" name="" class="inputNumber"
-                                                        min=0 max=6 value="0">
+                                                        min=0 max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -487,7 +515,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="naranjita" name="" class="inputNumber"
-                                                        min=0 max=6 value="0">
+                                                        min=0 max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -499,7 +527,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="pinky" name="" class="inputNumber" min=0
-                                                        max=6 value="0">
+                                                        max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -511,7 +539,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="sublime" name="" class="inputNumber" min=0
-                                                        max=6 value="0">
+                                                        max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -523,7 +551,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="engreida" name="" class="inputNumber" min=0
-                                                        max=6 value="0">
+                                                        max=6 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -575,7 +603,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" name="" class="inputNumber" min=0 max=12
-                                                        value="0" id="clasica">
+                                                        value="0" id="clasica" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -583,11 +611,11 @@
                                         <div class="don">
                                             <div class="dozen">
                                                 <label for="rubia" class="tit">Rubia</label>
-                                                <span class="sabor">Azucar con canela</span>
+                                                <span class="sabor">Azúcar con canela</span>
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="rubia" name="" class="inputNumber" min=0
-                                                        max=12 value="0">
+                                                        max=12 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -599,7 +627,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="elegante" name="" class="inputNumber" min=0
-                                                        max=12 value="0">
+                                                        max=12 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -611,8 +639,8 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="energetica" name="" class="inputNumber"
-                                                        min=0 max=12 value="0">
-                                                    <button class="increment">+</button>
+                                                        min=0 max=12 value="0" disabled="disabled">
+                                                    <button class="increment" >+</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -623,7 +651,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="fresca" name="" class="inputNumber" min=0
-                                                        max=12 value="0">
+                                                        max=12 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -636,7 +664,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="irresistible" name="" class="inputNumber"
-                                                        min=0 max=12 value="0">
+                                                        min=0 max=12 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -648,7 +676,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="naranjita" name="" class="inputNumber"
-                                                        min=0 max=12 value="0">
+                                                        min=0 max=12 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -660,7 +688,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="pinky" name="" class="inputNumber" min=0
-                                                        max=12 value="0">
+                                                        max=12 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -672,7 +700,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="sublime" name="" class="inputNumber" min=0
-                                                        max=12 value="0">
+                                                        max=12 value="0" disabled="disabled">
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -684,7 +712,7 @@
                                                 <div class="flavor">
                                                     <button class="decrement">-</button>
                                                     <input type="number" id="engreida" name="" class="inputNumber" min=0
-                                                        max=12 value="0">
+                                                        max=12 value="0" disabled="disabled"> 
                                                     <button class="increment">+</button>
                                                 </div>
                                             </div>
@@ -720,26 +748,24 @@
                     <div class="share__data">
                         <h2 class="section-title-center">Nosotros</h2>
                         <p class="share__description">
-                            Dulce Ilusión empresa creada por Aldo Hurtado y Jenny Kcomt, esposos emprendedores que
-                            juntos trabajan para crear este producto de calidad y llevarlo a sus hogares dando ilusión y
-                            alegría.
+                            Misión:<br>
+                            Llevar una Dulce Ilusión  a los hogares, ofreciendo un producto de calidad a un precio justo con un trato cálido y profesional.
                             <br><br>
-                            Nuestra misión es entregar un producto de calidad con dedicación llevando ilusión a los
-                            hogares.</p>
+                            Visión:<br>
+                            Ser una marca reconocida en el mercado, altamente confiable, expandiendo nuestros servicios para llegar a más hogares.</p>
 
                     </div>
 
                     <div class="share__img">
                         <div class="swiper-container swiper2">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="assets/img/shared1.png" alt="" id="fondo"></div>
-                                <div class="swiper-slide">Slide 2</div>
-                                <div class="swiper-slide">Slide 3</div>
-                                <div class="swiper-slide">Slide 4</div>
-
+                            <div class="swiper-wrapper wrapper2">
+                                <div class="swiper-slide"><img src="assets/img/Aldo_Jenny.png" alt="" class="nosotros_fotos"></div>
+                                <div class="swiper-slide"><img src="assets/img/varias_donas.png" alt="" class="nosotros_fotos"></div>
+                                <div class="swiper-slide"><img src="assets/img/dona_circular.jpeg" alt="" class="nosotros_fotos"></div>
+                                <div class="swiper-slide"><img src="assets/img/disco_dona.png" alt="" class="nosotros_fotos" ></div>
                             </div>
                             <!-- Add Pagination -->
-                            <div class="swiper-pagination"></div>
+                            <div class="swiper-pagination nosotros-pagination"></div>
 
                         </div>
 
@@ -759,7 +785,7 @@
                             <div class="info">
                                 <div class="information">
                                     <img src="./assets/img/location.png" class="icon" alt="" />
-                                    <p>Av. Aviacion 3944 1401, Surquillo</p>
+                                    <p>Jr. Los Sauces 105, San Borja</p>
                                 </div>
                                 <div class="information">
                                     <img src="./assets/img/email.png" class="icon" alt="" />
@@ -789,7 +815,7 @@
                             <span class="circle two"></span>
 
                             <form action="enviar2.php" autocomplete="off" method="POST">
-                                <h3 class="title">Ó Deje un mensaje</h3>
+                                <h3 class="contact_title">Deje un mensaje</h3>
                                 <div class="input-container">
                                     <input type="text" name="name" class="input" />
                                     <label for="">Nombre</label>
@@ -803,7 +829,7 @@
                                 <div class="input-container">
                                     <input type="tel" name="phone" class="input" />
                                     <label for="">Télefono</label>
-                                    <span>Télefono</span>
+                                    <span>Teléfono</span>
                                 </div>
                                 <div class="input-container textarea">
                                     <textarea name="message" class="input"></textarea>

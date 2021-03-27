@@ -71,6 +71,16 @@ body.dark-theme{
   --body-color: #251D1E;
   --container-color: #302728;
 }
+.delete-button{
+  border: 1px solid #e25c8f;
+  border-radius: 3px;
+  background: rgb(248, 85, 117);
+  color: black;
+  width: 20px;
+  font-size: 10px;
+  
+  height: 20px;
+}
 
 /*========== Button Dark/Light ==========*/
 .change-theme{
@@ -133,7 +143,7 @@ img{
 .l-main{
   overflow: hidden;
 }
-.fa-shopping-cart{
+#carrito_modal{
   color: #E57BA4;
 }
 
@@ -203,6 +213,9 @@ img{
   color: black;
   
 }
+.precio_delivery{
+  color: red;
+}
 
 .wrapper .icon:hover span{
   color: #fff;
@@ -230,6 +243,11 @@ before{
   max-width: 300px !important;
   width: 150px;
 }
+.wrapper2 .nosotros_fotos img{
+width: 400px !important;
+height: auto !important; 
+}
+
 /*========== NAV ==========*/
 .nav{
   height: var(--header-height);
@@ -238,7 +256,11 @@ before{
   align-items: center;
   
 }
-
+.contact_title{
+  color: #ffffff;
+  font-size: 22px;
+  text-align: center;
+}
 #shop{
 display: block;
 position: relative;
@@ -437,6 +459,7 @@ top: 10px;
 
 
 
+
 @media screen and (max-width: 768px){
   .nav__menu{
     position: fixed;
@@ -452,6 +475,9 @@ top: 10px;
     box-shadow: 0 0 4px rgba(0,0,0,.1);
     border-radius: 2rem;
     z-index: var(--z-fixed);
+  }
+  .nosotros-pagination{
+    margin-top: -60px;
   }
 
 }
@@ -1836,4 +1862,5 @@ textarea.input {
 .lead1{
   color: #E57BA4;
   font-size: 20px;
+  text-align: center;
 }

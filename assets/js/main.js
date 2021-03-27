@@ -141,9 +141,10 @@ var swiper = new Swiper('.swiper1', {
 
 var swiper = new Swiper('.swiper2', {
   spaceBetween: 30,
-  centeredSlides: true,
+  // centeredSlides: true,
+  loop:true,
   autoplay: {
-    delay: 2500,
+    delay: 6000,
     disableOnInteraction: false,
   },
   pagination: {
