@@ -11,7 +11,7 @@ function Navbar() {
                 </svg>
             </div>
             {/* Hidden */}
-            <div className="pr-8 md:block hidden ">
+            <div className="pr-8 md:block hidden">
                 <Link className="p-4" to="/">Home</Link>
                 <Link className="p-4" to="/menu">Menu</Link>
                 <Link className="p-4" to="/about">About</Link>
